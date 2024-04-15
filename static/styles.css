@@ -1,0 +1,117 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('t12.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Fixed Navbar styles */
+.navbar-brand{
+
+}
+
+.navbar {
+
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    padding:0;
+    top: 0;
+
+}
+
+/* Push body content down by the height of the navbar */
+body {
+    padding-top: 100px; /* Adjust to the height of your navbar */
+}
+
+/* Transparent form styles */
+#get-started-form{
+    padding-top:100px;
+
+
+}
+.form-transparent {
+
+    background: rgba(255, 255, 255, 0.8); /* White with transparency */
+    padding: 15px;
+    border-radius: 8px;
+    max_width:520;
+}
+
+/* Footer styles */
+footer {
+
+    width:100%;
+    color: #212529;
+
+
+
+}
+
+/* Utility classes */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+/* Responsive design for smaller devices */
+@media (max-width: 768px) {
+    header {
+        padding: 100px 0;
+    }
+}
+/* Footer background and text color */
+footer.bg-light {
+    background-color: #f8f9fa !important; /* Light grey background */
+    color: #212529 !important; /* Dark grey text */
+}
+
+/* Social icons customization */
+.social-icons a {
+    color: #495057; /* Dark grey icons */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Bootstrap primary color on hover */
+}
+
+/* Scroll to top button */
+a.text-dark {
+    color: #212529; /* Dark grey text */
+}
+
+a.text-dark:hover {
+    color: #007bff; /* Bootstrap primary color on hover */
+}
+
+/* Footer copyright text */
+footer p {
+    font-size: 0.875rem; /* Smaller font size */
+}
+#about-container{
+    padding-top:0;
+    background-color: rgba(255, 255, 255,0.4) !important;
+
+
+}
+#about-section{
+
+    background-color: rgba(255, 255, 255) !important;
+
+
+}

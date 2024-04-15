@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Bright Intelligence</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+</head>
+ <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<body class="bg-light">
+
+
+
+    <header class="py-5 mb-5" style="background: url('{{ url_for('static', filename='header-bg.jpg') }}') no-repeat center center; background-size: cover;">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="display-3 text-white mt-5 mb-2">Eco Bright<br> Intelligence</h1>
+                    <h3 class="display-4 text-white mt-5 mb-2">" Advanced Solar Charge Forecasting for Optimal Street Light Utilization ”</h3>
+                <button onclick="scrollToForm()" class="btn btn-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+        <!-- Add this button inside your <body> tag where you want the button to appear -->
+
+
+    </header>
+
+    <div id = "get-started-form"class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <div class="card shadow border-0">
+                    <div class="card-body p-4">
+
+                        <p class="text-left">Provide your details below to
+                            predict the charging and discharging of your
+                            solar-powered batteries.
+
+                        </p>
+                        <ul>
+        <li><strong>Date:</strong> The current date for accurate weather prediction.</li>
+        <li><strong>Mode:</strong> Your preferred battery operation mode (Battery Saver: 30%, Efficient 50%, Normal 70%, Best Performance 100%).</li>
+        <li><strong>Latitude & Longitude:</strong> Your location coordinates for precise solar energy calculations.</li>
+        <li><strong>Power Consumption Rate:</strong> The rate at which your device consumes power, to tailor our energy solutions to your needs.</li>
+    </ul>
+                        <form method="post" action="{{ url_for('result') }}">
+                            <!-- Form fields -->
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="date">Date:</label>
+                                    <input type="date" class="form-control" id="date" name="date" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="latitude">Latitude:</label>
+                                    <input type="text" class="form-control" id="latitude" name="latitude" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="longitude">Longitude:</label>
+                                    <input type="text" class="form-control" id="longitude" name="longitude" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="power_consumption_rate">Power Consumption Rate:(in watt)</label>
+                                    <input type="text" class="form-control" id="power_consumption_rate" name="power_consumption_rate" value="40" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="initial_battery_charge">Initial Battery Charge(%):</label>
+                                    <input type="text" class="form-control" id="initial_battery_charge" name="initial_battery_charge" value="0" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mode">Mode:</label>
+                                <select class="form-control" id="mode" name="mode" required>
+                                    <option value="0">Battery Saver</option>
+                                    <option value="1">Efficient</option>
+                                    <option value="2">Normal</option>
+                                    <option value="3">Best Performance</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="bg-light text-dark py-4">
+    <div class="container">
+        <!-- Contact & Follow Us -->
+        <div class="row justify-content-between">
+            <div class="col-md-5">
+                <h5>Contact Us</h5>
+                <p><strong>Email:</strong> hello@example.com</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+            </div>
+            <div class="col-md-5">
+                <h5>Connect With Us</h5>
+                <div class="social-icons">
+                    <a href="#" class="mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="mr-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mr-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Address & Scroll to Top -->
+        <div class="row mt-4 align-items-center">
+            <div class="col-md-5">
+                <h5>Our Location</h5>
+                <p>456 Lane, Sector 78, Indore</p>
+            </div>
+            <div class="col-md-5 text-md-right">
+                <a href="#" class="text-dark" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                    <i class="fas fa-chevron-up"></i> Back to Top
+                </a>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p>© 2024 Eco Bright Intelligence. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Add this script at the end of your <body> tag -->
+<script>
+function scrollToForm() {
+    document.getElementById('get-started-form').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+</script>
+</body>
+</html>
